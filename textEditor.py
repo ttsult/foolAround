@@ -2,6 +2,13 @@ from typing import Any
 from pip import main
 
 
+
+# text editor is a type of computer program that allows users to edit plain text.
+# Your task is to simulate a simplified text editor which can handle three types of operations:
+# * INSERT <text> - adds <text> to the end of the current text, where <text> is a string consisting of 20 English letters at most.
+# * BACKSPACE - erases the last character of the current text. If the current text is empty, this does nothing.
+# * UNDO - undo the last successful INSERT or BACKSPACE operation. If there is nothing to undo, this does nothing.
+
 def simpleTextEditor(self, operations):
     resArr = []
 
@@ -29,22 +36,10 @@ def simpleTextEditor(self, operations):
             if stack and stack[-1] == 1: # if the last command was BACKSPACE
                 resArr.append(string)
             elif stack and stack[-1] == 0: # if the last command was INSERT
-                resArr.append(string[:-remove])
-
-                
-            
-
-
-    # the string is not staying current, it is updating to much, when we want it to not change and just add on
-        
+                resArr.append(string[:-remove])     
+   
     print(resArr)       
 
-
-# text editor is a type of computer program that allows users to edit plain text.
-# Your task is to simulate a simplified text editor which can handle three types of operations:
-# * INSERT <text> - adds <text> to the end of the current text, where <text> is a string consisting of 20 English letters at most.
-# * BACKSPACE - erases the last character of the current text. If the current text is empty, this does nothing.
-# * UNDO - undo the last successful INSERT or BACKSPACE operation. If there is nothing to undo, this does nothing.
 
 inputBackspace = ["INSERT code", "INSERT signal", "BACKSPACE", "UNDO"] # CORRECT
 # desired output ['code', 'codesignal', 'codesign', 'codesignal']
